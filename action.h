@@ -1,12 +1,27 @@
 #ifndef ACTION_H
 #define ACTION_H
+#include <iostream>
+#include <string>
 
-#include "MP21-Team-a5_global.h"
 
-class MP21TEAMA5_EXPORT Action
+enum class AlarmLevel {High, Medium, Low};
+std::string getStringForEnum( int enum_val );
+
+
+class  Action
 {
 public:
-    Action();
+     // cosntructor
+    Action (AlarmLevel alarmLevel);
+    //getter and setters
+    const AlarmLevel &getAlarmLevel() const{return alarmLevel;};
+    void setAlarmLevel(const AlarmLevel &newAlarmLevel);
+    //Abstract method
+    virtual void action() = 0;
+
+private:
+     AlarmLevel alarmLevel;
+
 };
 
 #endif // ACTION_H
