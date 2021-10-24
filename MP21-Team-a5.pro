@@ -11,23 +11,35 @@ CONFIG += c++11
 
 SOURCES += \
     action.cpp \
+    component.cpp \
     coolingsprinkler.cpp \
     email.cpp \
+    gassensor.cpp \
     message.cpp \
+    motionsensor.cpp \
+    sensor.cpp \
+    smokesensor.cpp \
     sprinkler.cpp \
     text.cpp
 
 HEADERS += \
     MP21-Team-a5_global.h\
     action.h \
+    component.h \
     coolingsprinkler.h \
     email.h \
+    gassensor.h \
     message.h \
+    motionsensor.h \
+    sensor.h \
+    smokesensor.h \
     sprinkler.h \
     text.h
 
 # Default rules for deployment.
 unix {
-    target.path = /home/cemal/Desktop/MediaProcessing/Labs/MP21-Team-a5
+   # target.path = /home/cemal/Desktop/MediaProcessing/Labs/MP21-Team-a5
+    target.path =/home/chandhni/MediaProcessing/MP21-Team-a5
+
 }
 !isEmpty(target.path): INSTALLS += target
