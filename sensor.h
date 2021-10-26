@@ -7,7 +7,7 @@
 #include<vector>
 
 class Action;
-
+static int global_id;
 class Sensor : public Component
 {
 private:

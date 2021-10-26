@@ -40,6 +40,7 @@ std::string Sensor::getVendor() const
 
 Sensor::Sensor(const std::string &location, const std::string &vendor): location{location}, vendor{vendor}
 {
+    global_id++;
 }
 
 
