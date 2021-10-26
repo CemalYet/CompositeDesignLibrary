@@ -19,6 +19,25 @@ int Sensor::getId() const
     return id;
 }
 
+void Sensor::trigger()
+{
+    if(getIsActive()){
+        for( auto &act: actions){
+            act->action();
+        }
+    }
+}
+
+void Sensor::setId(int value)
+{
+    id = value;
+}
+
+std::string Sensor::getVendor() const
+{
+    return vendor;
+}
+
 Sensor::Sensor(const std::string &location, const std::string &vendor): location{location}, vendor{vendor}
 {
 }
@@ -32,11 +51,6 @@ std::string Sensor::getLocation() const
 void Sensor::setLocation(const std::string &value)
 {
     location = value;
-}
-
-std::string Sensor::getVendor() const
-{
-    return vendor;
 }
 
 

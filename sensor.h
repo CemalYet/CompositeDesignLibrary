@@ -32,6 +32,9 @@ public:
     std::vector<std::shared_ptr<Action> > getActions() const;
     bool getIsActive() const;
     int getId() const;
+    void trigger();
+    void setId(int value);
+
 };
 
 std::ostream & operator<<(std::ostream & os, const Sensor & s);
