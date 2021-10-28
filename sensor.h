@@ -1,14 +1,14 @@
 #ifndef SENSOR_H
 #define SENSOR_H
 
-//#include "component.h"
+#include "component.h"
 #include<string>
 #include<memory>
 #include<vector>
 
 class Action;
 static int global_id;
-class Sensor //: public Component
+class Sensor : public Component
 {
 private:
     bool isActive {false};
