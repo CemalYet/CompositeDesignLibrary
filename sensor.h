@@ -39,4 +39,25 @@ public:
 
 std::ostream & operator<<(std::ostream & os, const Sensor & s);
 
+//function objects
+class OrderById
+{
+    public:
+    bool operator()(const std::shared_ptr<Sensor> &s1, const std::shared_ptr<Sensor> &s2){
+        return s1->getId()<s2->getId();
+    }
+
+};
+
+class OrderByVendor{
+    public:
+    bool operator()(const std::shared_ptr<Sensor> &s1, const std::shared_ptr<Sensor> &s2){
+        return s1->getVendor()<s2->getVendor();
+    }
+
+};
+
+
+
+
 #endif // SENSOR_H
