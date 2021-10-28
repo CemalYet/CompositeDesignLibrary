@@ -5,11 +5,11 @@
 #include <string>
 #include <algorithm>
 
-
-//std::vector<Component> sensor(20);
-
-
-
+//activate all sensor by location
+//testall sensor without parameter
+//Deactivate all sensors by Location
+//Print an overview of all sensors, alphabetically ordered by location
+//Activate and test by sensortype
 
 void emergency_center::add_sensor(std::shared_ptr<Component> cmp)
 {
@@ -60,26 +60,6 @@ void emergency_center::giveOverviewAllSensorByVendor(std::string vendor)
 }
 
 
-void emergency_center::testAllSnsrbyLocation(std::string location)
-{
-
-   /* for (auto & sensor : component ){
-        if (location1 == location) {
-            std::cout<<"this location"<< location << "'s sensors will be activated " << std::endl;
-            sensor->operator++();
-            sensor->trigger();
-        }
-
-        if (location2 == location) {
-            std::cout<<"this location"<< location << "contains " << std::endl;
-            sensor->operator++();
-            sensor->trigger();
-        }
-    }
-    */
-}
-
-
 
 std::string emergency_center::printSensor() const {
     std::string result;
@@ -95,28 +75,29 @@ std::string emergency_center::printSensor() const {
 
 
 
-void emergency_center::testAllSnsrbyType(std::string type)
+void emergency_center::testSnsrbyLocation(std::string type)
 {
+        for (auto & c : component) {
+          if (c == component.back()) {
+             c->testSnsrbyLocation(type);
+          } else {
+             c->testSnsrbyLocation(type);
+          }
+        }
 
 }
 
-void emergency_center::testAllSnsrbyVendor(std::string vendor)
+void emergency_center::testSnsrbyVendor(std::string vendor)
 {
-    /*for (auto & sensor : component ){
-        if (vendor1 == vendor) {
-            std::cout<<"this Vendor: "<< vendor << "'s sensors will be activated " << std::endl;
-            sensor->operator++();
-            sensor->trigger();
-        }
-
-        if (vendor2 == vendor) {
-            std::cout<<"this Vendor: "<< vendor << "contains " << std::endl;
-            sensor->operator++();
-            sensor->trigger();
-        }
+    for (auto & c : component) {
+      if (c == component.back()) {
+         c->testSnsrbyLocation(vendor);
+      } else {
+         c->testSnsrbyLocation(vendor);
+      }
     }
-    */
 }
+
 
 void emergency_center::operator++() {
     std::cout << "sensor is activated" << std::endl;

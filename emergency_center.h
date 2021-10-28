@@ -25,8 +25,8 @@ public:
     void giveOverviewAllSensorByVendor(std::string vendor);
     void testAllSnsrbyLocation(std::string location);
     void giveOverviewAllSensor();
-    void testAllSnsrbyType(std::string type);
-    void testAllSnsrbyVendor(std::string vendor);
+    void testSnsrbyLocation(std::string type) override;
+    void testSnsrbyVendor(std::string vendor)override;
     std::string printSensor() const override;
     void operator++()  override;
     void trigger()  override;

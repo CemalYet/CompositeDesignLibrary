@@ -33,6 +33,8 @@ public:
     bool getIsActive() const;
     int getId() const;
     void trigger()  override;
+    void testSnsrbyLocation(std::string type) override;
+    void testSnsrbyVendor(std::string vendor) override;
 
 
 };
@@ -53,6 +55,13 @@ class OrderByVendor{
     public:
     bool operator()(const std::shared_ptr<Sensor> &s1, const std::shared_ptr<Sensor> &s2){
         return s1->getVendor()<s2->getVendor();
+    }
+
+};
+class OrderByLocation{
+    public:
+    bool operator()(const std::shared_ptr<Sensor> &s1, const std::shared_ptr<Sensor> &s2){
+        return s1->getLocation()<s2->getLocation();
     }
 
 };

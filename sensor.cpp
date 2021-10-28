@@ -54,6 +54,20 @@ void Sensor::addAction(std::shared_ptr<Action> action)
 {
     actions.push_back(action);
 }
+void Sensor::testSnsrbyLocation(std::string type)
+{
+   if(location==type){
+       trigger();
+   }
+}
+
+void Sensor::testSnsrbyVendor(std::string vendor)
+{
+   if(location==vendor){
+       trigger();
+   }
+}
+
 
 void Sensor::operator++()
 {
