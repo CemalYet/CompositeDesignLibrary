@@ -66,5 +66,5 @@ std::string Motionsensor:: printSensor()const {
 
     return "Motion sensor at location " +getLocation() +"with id "+std::to_string(getId())+" by vendor: " +getVendor() +
             " with activation range "+std::to_string(activationRange) +" meter and is "+ "active= "+std::to_string(getIsActive())+" ,and will be active only between "
-            +std::to_string(getStartTimeinHour())+" : "+std::to_string(getEndTimeinMinutes())+ "and " +std::to_string(getEndTimeinHour())+ " : "+std::to_string(getEndTimeinMinutes());
+            +std::to_string(getStartTimeinHour())+" : "+std::to_string(getEndTimeinMinutes())+ " and " +std::to_string(getEndTimeinHour())+ " : "+std::to_string(getEndTimeinMinutes());
 }

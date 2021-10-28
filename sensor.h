@@ -24,15 +24,15 @@ public:
     std::string getVendor() const;
     void addAction(std::shared_ptr<Action> action);
 
-    virtual std::string printSensor() const = 0;
+    std::string printSensor() const override=0;
 
-    void operator++();
+    void operator++() override;
     void operator--();
 
     std::vector<std::shared_ptr<Action> > getActions() const;
     bool getIsActive() const;
     int getId() const;
-    void trigger();
+    void trigger()  override;
 
 
 };

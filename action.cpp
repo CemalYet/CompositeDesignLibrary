@@ -6,7 +6,7 @@ static const char *enum_str[] =
 Action::Action(AlarmLevel alarmLevel)
     :alarmLevel{alarmLevel}
 {
-     std::cout << "-------Alarm constructor has been called--------" << std::endl;
+     //std::cout << "-------Alarm constructor has been called--------" << std::endl;
 }
 
 void Action::setAlarmLevel(const AlarmLevel &newAlarmLevel)

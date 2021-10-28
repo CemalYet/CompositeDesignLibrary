@@ -19,7 +19,7 @@ void emergency_center::add_sensor(std::shared_ptr<Component> cmp)
 
 void emergency_center::giveOverviewAllSensorByLocation(std::string location)
 {
-
+/*
     for (auto & sensor : component ){
         if (location1 == location) {
             std::cout<<"this location"<< location << "contains " << std::endl;
@@ -31,19 +31,21 @@ void emergency_center::giveOverviewAllSensorByLocation(std::string location)
             sensor->printSensor();
         }
     }
+    */
 }
 
 
 void emergency_center::giveOverviewAllSensorById(int id)
 {
-    Component sensor;
+   /* Component sensor;
     std::cout<<"this ID"<< id << "contains " << std::endl;
     sensor.printSensor();
+    */
 }
 
 void emergency_center::giveOverviewAllSensorByVendor(std::string vendor)
 {
-    for (auto & sensor : component ){
+   /* for (auto & sensor : component ){
         if (vendor1 == vendor) {
             std::cout<<"this location"<< vendor << "contains " << std::endl;
             sensor->printSensor();
@@ -54,13 +56,14 @@ void emergency_center::giveOverviewAllSensorByVendor(std::string vendor)
             sensor->printSensor();
         }
     }
+    */
 }
 
 
 void emergency_center::testAllSnsrbyLocation(std::string location)
 {
 
-    for (auto & sensor : component ){
+   /* for (auto & sensor : component ){
         if (location1 == location) {
             std::cout<<"this location"<< location << "'s sensors will be activated " << std::endl;
             sensor->operator++();
@@ -73,13 +76,23 @@ void emergency_center::testAllSnsrbyLocation(std::string location)
             sensor->trigger();
         }
     }
+    */
 }
 
 
 
-void emergency_center::printSensor() const {
-    std::cout<<"sensor details is printed"<<std::endl;
-}
+std::string emergency_center::printSensor() const {
+    std::string result;
+        for (auto & c : component) {
+          if (c == component.back()) {
+            result += c->printSensor();
+          } else {
+            result += c->printSensor()+ " +";
+          }
+        }
+        return "SensorCollection has ( " + result + " )\n";
+      }
+
 
 
 void emergency_center::testAllSnsrbyType(std::string type)
@@ -89,7 +102,7 @@ void emergency_center::testAllSnsrbyType(std::string type)
 
 void emergency_center::testAllSnsrbyVendor(std::string vendor)
 {
-    for (auto & sensor : component ){
+    /*for (auto & sensor : component ){
         if (vendor1 == vendor) {
             std::cout<<"this Vendor: "<< vendor << "'s sensors will be activated " << std::endl;
             sensor->operator++();
@@ -102,13 +115,14 @@ void emergency_center::testAllSnsrbyVendor(std::string vendor)
             sensor->trigger();
         }
     }
+    */
 }
 
-void emergency_center::operator++() const{
+void emergency_center::operator++() {
     std::cout << "sensor is activated" << std::endl;
 }
 
-void emergency_center::trigger() const{
+void emergency_center::trigger() {
     std::cout << "sensor is triggered" << std::endl;
 }
 

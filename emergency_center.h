@@ -11,11 +11,6 @@ class Sensor;
 
 class emergency_center : public Component {
 
-private:
-    std::string location1 = "electronic lab";
-    std::string location2 = "Chemistry lab";
-    std::string vendor1 = "xyz";
-    std::string vendor2 = "zyw";
 
 public:
 
@@ -32,9 +27,9 @@ public:
     void giveOverviewAllSensor();
     void testAllSnsrbyType(std::string type);
     void testAllSnsrbyVendor(std::string vendor);
-    void printSensor() const;
-    void operator++() const;
-    void trigger() const;
+    std::string printSensor() const override;
+    void operator++()  override;
+    void trigger()  override;
     void sensorsOrdredByID(std::vector<std::shared_ptr<Component>> component);
 
 
