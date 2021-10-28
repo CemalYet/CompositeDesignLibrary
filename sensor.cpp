@@ -28,11 +28,6 @@ void Sensor::trigger()
     }
 }
 
-void Sensor::setId(int value)
-{
-    id = value;
-}
-
 std::string Sensor::getVendor() const
 {
     return vendor;
@@ -40,7 +35,7 @@ std::string Sensor::getVendor() const
 
 Sensor::Sensor(const std::string &location, const std::string &vendor): location{location}, vendor{vendor}
 {
-    global_id++;
+    id=++global_id;
 }
 
 
