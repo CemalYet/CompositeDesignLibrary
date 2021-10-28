@@ -14,6 +14,7 @@ SOURCES += \
     component.cpp \
     coolingsprinkler.cpp \
     email.cpp \
+    emergency_center.cpp \
     gassensor.cpp \
     message.cpp \
     motionsensor.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     component.h \
     coolingsprinkler.h \
     email.h \
+    emergency_center.h \
     gassensor.h \
     message.h \
     motionsensor.h \
@@ -38,7 +40,7 @@ HEADERS += \
 
 # Default rules for deployment.
 unix {
-   # target.path = /home/cemal/Desktop/MediaProcessing/Labs/MP21-Team-a5
+   # target.path = /home/ahmed/MPLab
     target.path =/home/chandhni/MediaProcessing/MP21-Team-a5
 
 }

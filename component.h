@@ -6,6 +6,9 @@ class Component
 {
 public:
     Component();
+    virtual void printSensor();
+    virtual void operator++();
+    virtual void trigger();
 };
 
 #endif // COMPONENT_H
