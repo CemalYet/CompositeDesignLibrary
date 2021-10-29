@@ -25,11 +25,14 @@ public:
     void giveOverviewAllSensorByVendor(std::string vendor);
     void testAllSnsrbyLocation(std::string location);
     void giveOverviewAllSensor();
-    void testSnsrbyLocation(std::string type) override;
+    void testSnsrbyLocation(std::string location) override;
     void testSnsrbyVendor(std::string vendor)override;
     std::string printSensor() const override;
-    void operator++()  override;
-    void trigger()  override;
+    void activateSensor() override;
+    void testSnsr() override;
+    void activateSensorbyLocation(std::string location) override;
+    void deactivateSensorbyLocation(std::string location) override;
+
     void sensorsOrdredByID(std::vector<std::shared_ptr<Component>> component);
 
 

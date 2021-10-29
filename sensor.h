@@ -26,15 +26,19 @@ public:
 
     std::string printSensor() const override=0;
 
-    void operator++() override;
+    void operator++();
     void operator--();
 
     std::vector<std::shared_ptr<Action> > getActions() const;
     bool getIsActive() const;
     int getId() const;
-    void trigger()  override;
-    void testSnsrbyLocation(std::string type) override;
+    void trigger();
+    void testSnsr() override;
+    void testSnsrbyLocation(std::string location) override;
     void testSnsrbyVendor(std::string vendor) override;
+    void activateSensor() override;
+    void activateSensorbyLocation(std::string location) override;
+    void deactivateSensorbyLocation(std::string location) override;
 
 
 };

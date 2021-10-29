@@ -5,9 +5,9 @@
 #include <string>
 #include <algorithm>
 
-//activate all sensor by location
-//testall sensor without parameter
-//Deactivate all sensors by Location
+
+
+
 //Print an overview of all sensors, alphabetically ordered by location
 //Activate and test by sensortype
 
@@ -74,14 +74,25 @@ std::string emergency_center::printSensor() const {
       }
 
 
-
-void emergency_center::testSnsrbyLocation(std::string type)
+void emergency_center::testSnsr()
 {
         for (auto & c : component) {
           if (c == component.back()) {
-             c->testSnsrbyLocation(type);
+             c->testSnsr();
           } else {
-             c->testSnsrbyLocation(type);
+             c->testSnsr();
+          }
+        }
+
+}
+
+void emergency_center::testSnsrbyLocation(std::string location)
+{
+        for (auto & c : component) {
+          if (c == component.back()) {
+             c->testSnsrbyLocation(location);
+          } else {
+             c->testSnsrbyLocation(location);
           }
         }
 
@@ -91,21 +102,43 @@ void emergency_center::testSnsrbyVendor(std::string vendor)
 {
     for (auto & c : component) {
       if (c == component.back()) {
-         c->testSnsrbyLocation(vendor);
+         c->testSnsrbyVendor(vendor);
       } else {
-         c->testSnsrbyLocation(vendor);
+         c->testSnsrbyVendor(vendor);
+      }
+    }
+}
+
+void emergency_center:: activateSensor(){
+    for (auto & c : component) {
+      if (c == component.back()) {
+         c->activateSensor();
+      } else {
+         c->activateSensor();
       }
     }
 }
 
 
-void emergency_center::operator++() {
-    std::cout << "sensor is activated" << std::endl;
+void emergency_center:: activateSensorbyLocation(std::string location){
+    for (auto & c : component) {
+      if (c == component.back()) {
+         c->activateSensorbyLocation(location);
+      } else {
+         c->activateSensorbyLocation(location);
+      }
+    }
+}
+void emergency_center::deactivateSensorbyLocation(std::string location) {
+    for (auto & c : component) {
+      if (c == component.back()) {
+         c->deactivateSensorbyLocation(location) ;
+      } else {
+         c->deactivateSensorbyLocation(location);
+      }
+    }
 }
 
-void emergency_center::trigger() {
-    std::cout << "sensor is triggered" << std::endl;
-}
 
 void sensorsOrdredByID(std::vector<std::shared_ptr<Component>> cmp){
     std::sort(cmp.begin(), cmp.end());

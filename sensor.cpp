@@ -54,9 +54,16 @@ void Sensor::addAction(std::shared_ptr<Action> action)
 {
     actions.push_back(action);
 }
-void Sensor::testSnsrbyLocation(std::string type)
+
+void Sensor::testSnsr()
 {
-   if(location==type){
+   trigger();
+}
+
+
+void Sensor::testSnsrbyLocation(std::string location)
+{
+   if(location==location){
        trigger();
    }
 }
@@ -66,6 +73,24 @@ void Sensor::testSnsrbyVendor(std::string vendor)
    if(location==vendor){
        trigger();
    }
+}
+
+void Sensor::activateSensor()
+{
+  operator++();
+}
+
+void Sensor::activateSensorbyLocation(std::string location)
+{
+  if(location==location){
+     operator++();
+  }
+
+}
+void Sensor::deactivateSensorbyLocation(std::string location){
+    if(location==location){
+       operator--();
+    }
 }
 
 
