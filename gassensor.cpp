@@ -2,8 +2,8 @@
 
 #include <string>
 
-Gassensor::Gassensor(const std::string &location, const std::string &vendor, const std::string &gasType):
-    Sensor{location,vendor}, gasType{gasType}
+Gassensor::Gassensor(const std::string &location, const std::string &vendor,const SensorType &type, const std::string &gasType):
+    Sensor{location,vendor,type}, gasType{gasType}
 {
 }
 

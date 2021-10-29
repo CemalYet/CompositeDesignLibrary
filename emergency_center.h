@@ -27,6 +27,7 @@ public:
     void giveOverviewAllSensor();
     void testSnsrbyLocation(std::string location) override;
     void testSnsrbyVendor(std::string vendor)override;
+    void testSnsrbyType(SensorType type)override;
     std::string printSensor() const override;
     void activateSensor() override;
     void testSnsr() override;

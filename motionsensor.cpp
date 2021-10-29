@@ -5,8 +5,8 @@
 #include "action.h"
 
 
-Motionsensor::Motionsensor(const std::string &location, const std::string &vendor, int startTimeHour, int startTimeMinutes, int endTimeHour, int endTimeMinutes)
-    :Sensor(location,vendor), startTimeinHour{startTimeHour}, startTimeinMinutes{startTimeMinutes}, endTimeinHour{endTimeHour}, endTimeinMinutes{endTimeMinutes}
+Motionsensor::Motionsensor(const std::string &location, const std::string &vendor, const SensorType &type, int startTimeHour, int startTimeMinutes, int endTimeHour, int endTimeMinutes)
+    :Sensor(location,vendor,type), startTimeinHour{startTimeHour}, startTimeinMinutes{startTimeMinutes}, endTimeinHour{endTimeHour}, endTimeinMinutes{endTimeMinutes}
 {
 
 }

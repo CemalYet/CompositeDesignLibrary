@@ -1,6 +1,7 @@
 #ifndef COMPONENT_H
 #define COMPONENT_H
 #include<string>
+#include "sensorTypeEnum.h"
 
 class Component
 {
@@ -10,6 +11,7 @@ public:
     virtual void testSnsr()=0;
     virtual void testSnsrbyLocation(std::string location) =0;
     virtual void testSnsrbyVendor(std::string vendor)=0;
+    virtual void testSnsrbyType(SensorType type)=0;
     virtual void activateSensor()=0;
     virtual void activateSensorbyLocation(std::string location)=0;
     virtual void deactivateSensorbyLocation(std::string location)=0;

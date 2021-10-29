@@ -12,7 +12,7 @@ private:
     long int treshold;
 
 public:
-    Gassensor(const std::string &location, const std::string &vendor, const std::string &gasType);
+    Gassensor(const std::string &location, const std::string &vendor, const SensorType &type, const std::string &gasType);
     std::string getGasType() const;
     void setValue(int val);
     int getValue() const;

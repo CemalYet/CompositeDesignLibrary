@@ -33,7 +33,12 @@ std::string Sensor::getVendor() const
     return vendor;
 }
 
-Sensor::Sensor(const std::string &location, const std::string &vendor): location{location}, vendor{vendor}
+SensorType Sensor::getType() const
+{
+    return type;
+}
+
+Sensor::Sensor(const std::string &location, const std::string &vendor, const SensorType &type): location{location}, vendor{vendor},type{type}
 {
     id=++global_id;
 }
@@ -63,16 +68,23 @@ void Sensor::testSnsr()
 
 void Sensor::testSnsrbyLocation(std::string location)
 {
-   if(location==location){
+   if(location==this->location){
        trigger();
    }
 }
 
 void Sensor::testSnsrbyVendor(std::string vendor)
 {
-   if(location==vendor){
+   if(vendor==this->vendor){
        trigger();
    }
+}
+
+void Sensor::testSnsrbyType(SensorType type)
+{
+    if(type==this->type){
+        trigger();
+    }
 }
 
 void Sensor::activateSensor()
@@ -82,13 +94,13 @@ void Sensor::activateSensor()
 
 void Sensor::activateSensorbyLocation(std::string location)
 {
-  if(location==location){
+  if(location==this->location){
      operator++();
   }
 
 }
 void Sensor::deactivateSensorbyLocation(std::string location){
-    if(location==location){
+    if(location==this->location){
        operator--();
     }
 }

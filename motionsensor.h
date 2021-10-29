@@ -14,7 +14,7 @@ private:
     int endTimeinMinutes{0};
 
 public:
-    Motionsensor(const std::string &location, const std::string &vendor, int startTimeHour, int startTimeMinutes, int endTimeHour, int endTimeMinutes);
+    Motionsensor(const std::string &location, const std::string &vendor,const SensorType &type, int startTimeHour, int startTimeMinutes, int endTimeHour, int endTimeMinutes);
     int getActivationRange() const;
     void setActivationRange(const int &value);
 

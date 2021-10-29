@@ -1,8 +1,8 @@
 #include "smokesensor.h"
 #include <string>
 
-SmokeSensor::SmokeSensor(const std::string &location, const std::string &vendor)
-    :Sensor{location,vendor}
+SmokeSensor::SmokeSensor(const std::string &location, const std::string &vendor, const SensorType &type)
+    :Sensor{location,vendor,type}
 {
 
 }

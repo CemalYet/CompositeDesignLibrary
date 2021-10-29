@@ -34,6 +34,7 @@ HEADERS += \
     message.h \
     motionsensor.h \
     sensor.h \
+    sensorTypeEnum.h \
     smokesensor.h \
     sprinkler.h \
     text.h

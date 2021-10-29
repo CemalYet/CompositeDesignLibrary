@@ -109,6 +109,17 @@ void emergency_center::testSnsrbyVendor(std::string vendor)
     }
 }
 
+void emergency_center::testSnsrbyType(SensorType type)
+{
+    for (auto & c : component) {
+      if (c == component.back()) {
+         c->testSnsrbyType(type);
+      } else {
+         c->testSnsrbyType(type);
+      }
+    }
+}
+
 void emergency_center:: activateSensor(){
     for (auto & c : component) {
       if (c == component.back()) {
