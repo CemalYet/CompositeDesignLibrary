@@ -15,6 +15,7 @@ public:
     virtual void activateSensor()=0;
     virtual void activateSensorbyLocation(std::string location)=0;
     virtual void deactivateSensorbyLocation(std::string location)=0;
+    virtual void operator++()=0;
 
 };
 

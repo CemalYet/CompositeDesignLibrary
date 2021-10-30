@@ -60,6 +60,11 @@ void Sensor::addAction(std::shared_ptr<Action> action)
     actions.push_back(action);
 }
 
+/*std::string Sensor::printSensor() const
+{
+    std::cout<<"Sensor id"<<id<<std::endl;
+}*/
+
 void Sensor::testSnsr()
 {
    trigger();

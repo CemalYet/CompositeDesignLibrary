@@ -6,6 +6,7 @@
 #include <string>
 #include <memory>
 #include "component.h"
+#include <functional>
 
 class Sensor;
 
@@ -24,7 +25,7 @@ public:
     void giveOverviewAllSensorById(int id);
     void giveOverviewAllSensorByVendor(std::string vendor);
     void testAllSnsrbyLocation(std::string location);
-    void giveOverviewAllSensor();
+    void giveOverviewofAllSensor(std::function<bool(const std::shared_ptr<Sensor> &, const std::shared_ptr<Sensor> &)> comp);
     void testSnsrbyLocation(std::string location) override;
     void testSnsrbyVendor(std::string vendor)override;
     void testSnsrbyType(SensorType type)override;
@@ -33,9 +34,10 @@ public:
     void testSnsr() override;
     void activateSensorbyLocation(std::string location) override;
     void deactivateSensorbyLocation(std::string location) override;
+    void operator++() override;
 
     void sensorsOrdredByID(std::vector<std::shared_ptr<Component>> component);
-
+    std::vector<std::shared_ptr<Sensor>>getListOfSensorsInThisEmergCenter() const;
 
 };
 

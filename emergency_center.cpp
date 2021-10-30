@@ -4,6 +4,7 @@
 #include "emergency_center.h"
 #include <string>
 #include <algorithm>
+#include "sensor.h"
 
 
 
@@ -57,6 +58,16 @@ void emergency_center::giveOverviewAllSensorByVendor(std::string vendor)
         }
     }
     */
+}
+
+void emergency_center::giveOverviewofAllSensor(std::function<bool(const std::shared_ptr<Sensor> &, const std::shared_ptr<Sensor> &)> comp)
+{
+
+   auto sensors=getListOfSensorsInThisEmergCenter();
+   std::sort(sensors.begin(), sensors.end(), comp);
+   for(auto &s :sensors){
+       s->printSensor();
+   }
 }
 
 
@@ -150,8 +161,32 @@ void emergency_center::deactivateSensorbyLocation(std::string location) {
     }
 }
 
+void emergency_center::operator++()
+{
+    activateSensor();
+}
 
-void sensorsOrdredByID(std::vector<std::shared_ptr<Component>> cmp){
+std::vector<std::shared_ptr<Sensor> > emergency_center::getListOfSensorsInThisEmergCenter() const
+{
+    std::vector<std::shared_ptr<Sensor>> sensors;
+    for (auto & c : component) {
+        std::shared_ptr<emergency_center> composite(dynamic_cast<emergency_center*>(c.get()));
+        if (  composite != nullptr){
+          auto child_sensors=composite->getListOfSensorsInThisEmergCenter();
+          for (auto & s : child_sensors) {
+                  sensors.push_back(s);
+          }
+        }else{
+          std::shared_ptr<Sensor> s(dynamic_cast<Sensor*>(c.get()));
+          sensors.push_back(s);
+        }
+
+    }
+    return sensors;
+}
+
+
+void emergency_center::sensorsOrdredByID(std::vector<std::shared_ptr<Component>> cmp){
     std::sort(cmp.begin(), cmp.end());
 }
 

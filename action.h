@@ -4,7 +4,7 @@
 #include <string>
 
 
-enum class AlarmLevel {High, Medium, Low};
+enum class AlarmLevel {High, Medium, Low, Off};
 std::string getStringForEnum( int enum_val );
 
 

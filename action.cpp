@@ -1,7 +1,7 @@
 #include "action.h"
 
 static const char *enum_str[] =
-        { "High level", "Medium level", "Low level" };
+        { "High level", "Medium level", "Low level","Off" };
 
 Action::Action(AlarmLevel alarmLevel)
     :alarmLevel{alarmLevel}

@@ -11,10 +11,12 @@ CONFIG += c++11
 
 SOURCES += \
     action.cpp \
+    activatelightandac.cpp \
     component.cpp \
     coolingsprinkler.cpp \
     email.cpp \
     emergency_center.cpp \
+    evacuateneighbours.cpp \
     gassensor.cpp \
     message.cpp \
     motionsensor.cpp \
@@ -26,10 +28,12 @@ SOURCES += \
 HEADERS += \
     MP21-Team-a5_global.h\
     action.h \
+    activatelightandac.h \
     component.h \
     coolingsprinkler.h \
     email.h \
     emergency_center.h \
+    evacuateneighbours.h \
     gassensor.h \
     message.h \
     motionsensor.h \
