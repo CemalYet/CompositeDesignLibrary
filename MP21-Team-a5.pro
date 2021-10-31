@@ -51,7 +51,7 @@ HEADERS += \
 unix {
    # target.path = /home/ahmed/MPLab
    # target.path =/home/chandhni/MediaProcessing/MP21-Team-a5
-   target.path = /home/cemal/Desktop/MP21-Team-a5
+   target.path = /home/cemal/Desktop/MediaProcessing/Labs/MP21-Team-a5
 
 }
 !isEmpty(target.path): INSTALLS += target
