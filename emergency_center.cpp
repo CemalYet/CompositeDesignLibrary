@@ -203,7 +203,10 @@ void emergency_center::giveOverviewofAllSensor(std::function<bool(const std::sha
     auto sensors=getListOfSensorsInThisEmergCenter();
     std::sort(sensors.begin(), sensors.end(), comp);
     for(auto &s :sensors){
-        std::cout <<dynamic_cast<Sensor*>(s.get())->getLocation()<<std::endl;
+        std::cout <<"Sensor with id ="<< dynamic_cast<Sensor*>(s.get())->getId()<<" at location "<<
+                     dynamic_cast<Sensor*>(s.get())->getLocation()<<" by vendor " <<
+                     dynamic_cast<Sensor*>(s.get())->getVendor()
+                     <<std::endl;
     }
 }
 

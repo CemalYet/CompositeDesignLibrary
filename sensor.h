@@ -55,16 +55,16 @@ std::ostream & operator<<(std::ostream & os, const Sensor & s);
 class OrderById
 {
     public:
-    bool operator()(const std::shared_ptr<Sensor> &s1, const std::shared_ptr<Sensor> &s2){
-        return s1->getId()<s2->getId();
+    bool operator()(const std::shared_ptr<Component> &s1, const std::shared_ptr<Component> &s2){
+        return dynamic_cast<Sensor*>(s1.get())->getId()<dynamic_cast<Sensor*>(s2.get())->getId();
     }
 
 };
 
 class OrderByVendor{
     public:
-    bool operator()(const std::shared_ptr<Sensor> &s1, const std::shared_ptr<Sensor> &s2){
-        return s1->getVendor()<s2->getVendor();
+    bool operator()(const std::shared_ptr<Component> &s1, const std::shared_ptr<Component> &s2){
+        return dynamic_cast<Sensor*>(s1.get())->getVendor()<dynamic_cast<Sensor*>(s2.get())->getVendor();
     }
 
 };
