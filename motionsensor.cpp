@@ -10,6 +10,21 @@ Motionsensor::Motionsensor(const std::string &location, const std::string &vendo
 {
 
 }
+Motionsensor::Motionsensor(const std::string &location, const std::string &vendor,const SensorType &type)
+    :Sensor(location,vendor,type)
+{
+
+}
+
+Motionsensor::Motionsensor(int activationRange, int startTimeinHour, int startTimeinMinutes, int endTimeinHour, int endTimeinMinutes, const std::string &location, const std::string &vendor,const SensorType &type)
+    : Sensor(location, vendor,type),
+    activationRange(activationRange),
+    startTimeinHour(startTimeinHour),
+    startTimeinMinutes(startTimeinMinutes),
+    endTimeinHour(endTimeinHour),
+    endTimeinMinutes(endTimeinMinutes)
+{}
+
 
 int Motionsensor::getActivationRange() const
 {

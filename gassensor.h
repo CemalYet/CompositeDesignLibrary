@@ -13,6 +13,8 @@ private:
 
 public:
     Gassensor(const std::string &location, const std::string &vendor, const SensorType &type, const std::string &gasType);
+
+    Gassensor(const std::string &gasType,long treshold, const std::string &location, const std::string &vendor,const SensorType &type);
     std::string getGasType() const;
     void setValue(int val);
     int getValue() const;

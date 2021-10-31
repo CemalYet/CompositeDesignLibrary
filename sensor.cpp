@@ -109,6 +109,11 @@ void Sensor::deactivateSensorbyLocation(std::string location){
        operator--();
     }
 }
+void Sensor::deactivateSensor(){
+
+       operator--();
+
+}
 
 
 void Sensor::operator++()

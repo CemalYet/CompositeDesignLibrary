@@ -7,6 +7,13 @@ Gassensor::Gassensor(const std::string &location, const std::string &vendor,cons
 {
 }
 
+Gassensor::Gassensor(const std::string &gasType,long treshold, const std::string &location, const std::string &vendor,const SensorType &type):
+    Sensor{location,vendor,type}, gasType{gasType},treshold{treshold}
+{
+}
+
+
+
 std::string Gassensor::getGasType() const
 {
     return gasType;

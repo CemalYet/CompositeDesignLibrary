@@ -15,6 +15,8 @@ private:
 
 public:
     Motionsensor(const std::string &location, const std::string &vendor,const SensorType &type, int startTimeHour, int startTimeMinutes, int endTimeHour, int endTimeMinutes);
+    Motionsensor(const std::string &location, const std::string &vendor,const SensorType &type);
+    Motionsensor(int activationRange, int startTimeinHour, int startTimeinMinutes, int endTimeinHour, int endTimeinMinutes, const std::string &location, const std::string &vendor,const SensorType &type);
     int getActivationRange() const;
     void setActivationRange(const int &value);
 

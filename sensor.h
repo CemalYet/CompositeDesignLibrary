@@ -29,7 +29,7 @@ public:
 
     std::string printSensor() const override=0;
 
-    void operator++();
+    void operator++() override;
     void operator--();
 
     std::vector<std::shared_ptr<Action> > getActions() const;
@@ -42,6 +42,7 @@ public:
     void testSnsrbyType(SensorType type) override;
     void activateSensor() override;
     void activateSensorbyLocation(std::string location) override;
+    void deactivateSensor() override;
     void deactivateSensorbyLocation(std::string location) override;
 
 
@@ -69,8 +70,8 @@ class OrderByVendor{
 };
 class OrderByLocation{
     public:
-    bool operator()(const std::shared_ptr<Sensor> &s1, const std::shared_ptr<Sensor> &s2){
-        return s1->getLocation()<s2->getLocation();
+    bool operator()(const std::shared_ptr<Component> &s1, const std::shared_ptr<Component> &s2){
+        return dynamic_cast<Sensor*>(s1.get())->getLocation()<dynamic_cast<Sensor*>(s2.get())->getLocation();
     }
 
 };

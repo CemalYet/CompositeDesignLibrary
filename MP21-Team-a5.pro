@@ -12,6 +12,8 @@ CONFIG += c++11
 SOURCES += \
     action.cpp \
     activatelightandac.cpp \
+    alarm.cpp \
+    call.cpp \
     component.cpp \
     coolingsprinkler.cpp \
     email.cpp \
@@ -29,6 +31,8 @@ HEADERS += \
     MP21-Team-a5_global.h\
     action.h \
     activatelightandac.h \
+    alarm.h \
+    call.h \
     component.h \
     coolingsprinkler.h \
     email.h \
@@ -47,7 +51,7 @@ HEADERS += \
 unix {
    # target.path = /home/ahmed/MPLab
    # target.path =/home/chandhni/MediaProcessing/MP21-Team-a5
-   target.path = /home/cemal/Desktop/MediaProcessing/Labs/MP21-Team-a5
+   target.path = /home/cemal/Desktop/MP21-Team-a5
 
 }
 !isEmpty(target.path): INSTALLS += target
