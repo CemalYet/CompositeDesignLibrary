@@ -8,6 +8,7 @@
 #include "sensorTypeEnum.h"
 
 
+
 class Action;
 static int global_id;
 class Sensor : public Component
@@ -26,6 +27,7 @@ public:
     void setLocation(const std::string &value);
     std::string getVendor() const;
     void addAction(std::shared_ptr<Action> action);
+    std::string getStringForSensortype( int enum_val );
 
     std::string printSensor() const override=0;
 

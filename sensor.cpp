@@ -3,6 +3,15 @@
 #include <iostream>
 #include <sstream>
 
+static const char *enum_str[] =
+        { "Motion", "Smoke", "Gas"};
+
+std::string Sensor:: getStringForSensortype( int enum_val )
+{
+    std::string tmp(enum_str[enum_val]);
+    return tmp;
+}
+
 
 std::vector<std::shared_ptr<Action> > Sensor::getActions() const
 {
@@ -23,6 +32,7 @@ void Sensor::trigger()
 {
     if(getIsActive()){
         for( auto &act: actions){
+            std::cout <<getStringForSensortype((int)getType())<< " Sensor with id "<<getId()<< " in location "<<getLocation()<<" is doing its action : "<<std::endl;
             act->action();
         }
     }
@@ -95,6 +105,7 @@ void Sensor::testSnsrbyType(SensorType type)
 void Sensor::activateSensor()
 {
   operator++();
+  std::cout <<getStringForSensortype((int)getType())<<" Sensor with id "<<getId()<< " in location "<<getLocation()<<" has been activated "<<std::endl;
 }
 
 void Sensor::activateSensorbyLocation(std::string location)
@@ -106,13 +117,13 @@ void Sensor::activateSensorbyLocation(std::string location)
 }
 void Sensor::deactivateSensorbyLocation(std::string location){
     if(location==this->location){
-       operator--();
+
     }
 }
-void Sensor::deactivateSensor(){
-
-       operator--();
-
+void Sensor::deactivateSensor()
+{
+    std::cout<<getStringForSensortype((int)getType())<<" Sensor with id "<<getId()<< " in location "<<getLocation()<<" has been deactivated "<<std::endl;
+    operator--();
 }
 
 
